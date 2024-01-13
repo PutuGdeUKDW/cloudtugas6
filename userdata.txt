@@ -9,3 +9,7 @@ mkdir /mnt/efs
 sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-097adff14e6b79c61.efs.us-east-1.amazonaws.com:/ /mnt/efs/
 sudo chmod 775 -R /mnt/efs/
 sudo docker run -d -p 80:80 --name webserver -v /mnt/efs:/var/www/localhost/htdocs putugde/tugas6:1.0
+# public_ip=$(curl ifconfig.me)
+# http_public_ip="http://$public_ip/"
+# mysql -u stefanus --password=1sampai8 -h database-1.cpoqy4koerm6.us-east-1.rds.amazonaws.com -e "USE wordpress; UPDATE wp_options SET option_value='$http_public_ip' WHERE option_name='siteurl';"
+# mysql -u stefanus --password=1sampai8 -h database-1.cpoqy4koerm6.us-east-1.rds.amazonaws.com -e "USE wordpress; UPDATE wp_options SET option_value='$http_public_ip' WHERE option_name='home';"
